@@ -179,33 +179,13 @@ public class KeyBoardActivity extends Activity {
 					serverAddress, Settings.scoketnum);
 			// 调用socket对象的send方法，发送数据
 			socket.send(packet);
-			
-			// 获取图片并显示
-			showView();
+						
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
 	
-	private void showView() {	
-		RelativeLayout keyboard = (RelativeLayout) findViewById(R.id.keyboard);
-//		TextView screen = (TextView) findViewById(R.id.screen);
-//		LayoutParams params = new LayoutParams(null
-//				);
-//		params.gravity = Gravity.CENTER;
-//		keyboard.setLayoutParams(params);
-		final ImageView image = new ImageView(this);
-		keyboard.addView(image);
-		image.setImageResource(images[0]);
-		image.setOnClickListener(new OnClickListener()
-		{
-			public void onClick(View v)
-			{
-				image.setImageResource(images[++currentImg % images.length]);
-			}
-		});
-	}
 	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {

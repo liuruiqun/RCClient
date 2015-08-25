@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="hello">Hello World, RemoteControlActivity!</string>
-    <string name="app_name">远程控制</string>
-	<string name="keyboard">键盘输入</string>
-	<string name="about">关于</string>
-	<string name="default_ip">192.168.0.78</string>
+    <string name="hello">欢迎使用!</string>
+    <string name="default_ip">192.168.0.77</string>
 	<string name="default_socket">8888</string>
-	<string name="startButton">开始</string>
+	<string name="startButton">截屏</string>
+    <string name="app_name">远程控制</string>
+	<string name="keyboard">键盘</string>
+	<string name="mouse">鼠标</string>
+	<string name="about">关于</string>
 	<string name="sendbutton">发送</string>
 	<string name="ClearButton">退格</string>
 	<string name="enterbutton">回车</string>
-	<string name="dosButton">DOS发送</string>
+	<string name="dosButton">发送</string>
 	<string name="iplabal">电脑IP：</string>
 	<string name="socketlabel">端口号：</string>
-	<string name="connectButton">手机连接电脑</string>
+	<string name="connectButton">连接</string>
 	<string name="help"></string>
 	<string name="aboutlabel">左手码农</string>
 	<string name="helptitle">使用说明</string>
