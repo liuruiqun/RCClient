@@ -4,10 +4,13 @@
     <string name="hello">欢迎使用!</string>
     <string name="default_ip">192.168.0.77</string>
 	<string name="default_socket">8888</string>
+	<string name="declare">在此声明!</string>	
 	<string name="startButton">截屏</string>
     <string name="app_name">远程控制</string>
-	<string name="keyboard">键盘</string>
+    <string name="movie">电影</string>
+    <string name="PPT">幻灯片</string>
 	<string name="mouse">鼠标</string>
+	<string name="keyboard">DOS</string>
 	<string name="about">关于</string>
 	<string name="sendbutton">发送</string>
 	<string name="ClearButton">退格</string>
@@ -16,7 +19,6 @@
 	<string name="iplabal">电脑IP：</string>
 	<string name="socketlabel">端口号：</string>
 	<string name="connectButton">连接</string>
-	<string name="help"></string>
 	<string name="aboutlabel">左手码农</string>
 	<string name="helptitle">使用说明</string>
 	<string name="exit">退出</string>

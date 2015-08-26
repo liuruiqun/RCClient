@@ -74,7 +74,7 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/textView4"
         android:layout_alignParentLeft="true"
-        android:text="@string/help"
+        android:text="@string/declare"
         android:textColor="@color/black" />
 
     <TextView
