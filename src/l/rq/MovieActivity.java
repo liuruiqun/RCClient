@@ -31,42 +31,43 @@ public class MovieActivity extends Activity{
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.movie);
-//		startButton = (Button) findViewById(R.id.startbutton);
-//		upButton = (Button) findViewById(R.id.volumeupbutton);
-//		downButton = (Button) findViewById(R.id.volumedownbutton);
-//		leftButton = (Button) findViewById(R.id.backbutton);
-//		rightButton = (Button) findViewById(R.id.forbutton);
-//		
-//		try {
-//			socket = new DatagramSocket();
-//		} catch (SocketException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//		
-//		upButton.setOnClickListener(new OnClickListener() {
-//
-//			@Override
-//			public void onClick(View arg0) {
-//				sendMessage("keyboard:key,Up,click");
-//			}
-//
-//		});
-//		
-//		upButton.setOnClickListener(new OnClickListener() {
-//
-//			@Override
-//			public void onClick(View arg0) {
-//				sendMessage("keyboard:key,Up,click");
-//			}
-//
-//		});
+		startButton = (Button) findViewById(R.id.startbutton);
+		upButton = (Button) findViewById(R.id.volumeupbutton);
+		downButton = (Button) findViewById(R.id.volumedownbutton);
+		leftButton = (Button) findViewById(R.id.backbutton);
+		rightButton = (Button) findViewById(R.id.forbutton);
+		
+		try {
+			socket = new DatagramSocket();
+		} catch (SocketException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		startButton.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+				sendMessage("movie:key,Start,click");
+			}
+
+		});
+		
+		
+		upButton.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+				sendMessage("movie:key,Up,click");
+			}
+
+		});
 		
 		downButton.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View arg0) {
-				sendMessage("keyboard:key,Down,click");
+				sendMessage("movie:key,Down,click");
 			}
 
 		});
@@ -75,7 +76,7 @@ public class MovieActivity extends Activity{
 
 			@Override
 			public void onClick(View arg0) {
-				sendMessage("keyboard:key,Left,click");
+				sendMessage("movie:key,Left,click");
 			}
 
 		});
@@ -84,7 +85,7 @@ public class MovieActivity extends Activity{
 
 			@Override
 			public void onClick(View arg0) {
-				sendMessage("keyboard:key,Right,click");
+				sendMessage("movie:key,Right,click");
 			}
 
 		});
@@ -98,7 +99,7 @@ public class MovieActivity extends Activity{
 					data, 
 					data.length,
 					serverAddress, 
-					Settings.scoketnum
+					Settings.socketnum
 					);
 			socket.send(packet);
 		} catch (Exception e) {
@@ -120,7 +121,11 @@ public class MovieActivity extends Activity{
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
-		case R.id.doshelp:
+		case R.id.about:
+			about();
+			return true;
+		
+		case R.id.help:
 			help();
 			return true;
 		
@@ -129,6 +134,31 @@ public class MovieActivity extends Activity{
 			return true;
 		}
 		return false;
+	}
+	
+	/**
+	 * 显示关于我们
+	 */
+	public void about() {
+		new AlertDialog.Builder(MovieActivity.this)
+				.setTitle("关于")
+				.setMessage("欢迎使用 遥控小精灵  \n作者：刘锐群")
+				.setIcon(R.drawable.icon)
+				.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+					@Override
+					public void onClick(DialogInterface dialog, int whichButton) {
+						// finish();
+					}
+				})
+				.setNegativeButton("返回", new DialogInterface.OnClickListener() {
+
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+						// TODO Auto-generated method stub
+
+					}
+
+				}).show();
 	}
 	
 	private void help(){

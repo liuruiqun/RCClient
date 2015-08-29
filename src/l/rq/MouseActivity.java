@@ -1,5 +1,6 @@
 package l.rq;
 
+
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
@@ -199,8 +200,8 @@ public class MouseActivity extends Activity {
 		case R.id.about:
 			about();
 			return true;
-		case R.id.keyboard:
-			keyboard();
+		case R.id.help:
+			help();
 			return true;
 		case R.id.reback:
 			doBack();
@@ -285,7 +286,7 @@ public class MouseActivity extends Activity {
 					data, 
 					data.length,
 					serverAddress, 
-					Settings.scoketnum);
+					Settings.socketnum);
 			// 调用socket对象的send方法，发送数据
 			socket.send(packet);
 			//System.out.println("send");
@@ -318,8 +319,8 @@ public class MouseActivity extends Activity {
 	 */
 	public void about() {
 		new AlertDialog.Builder(MouseActivity.this)
-				.setTitle("关于我们")
-				.setMessage("欢迎使用 远程助手  \n作者：刘锐群")
+				.setTitle("关于")
+				.setMessage("欢迎使用 遥控小精灵  \n作者：刘锐群")
 				.setIcon(R.drawable.icon)
 				.setPositiveButton("确定", new DialogInterface.OnClickListener() {
 					@Override
@@ -337,62 +338,25 @@ public class MouseActivity extends Activity {
 
 				}).show();
 	}
-
-	public void keyboard() {
-		/*
-		 * // EditText et = (EditText) this.findViewById(R.id.editText); //
-		 * 获得控制键盘的类的对象 InputMethodManager imm = (InputMethodManager)
-		 * ControlActivity.this .getSystemService(INPUT_METHOD_SERVICE);
-		 * 
-		 * // 打开（自动控制的再次点击按钮就会消失的） imm.toggleSoftInput(0,
-		 * InputMethodManager.HIDE_NOT_ALWAYS);
-		 */
-		Intent intent = new Intent(this, DOSActivity.class);
-		this.startActivity(intent);
-		this.finish();
-	}
 	
-	public void hand(){
-		Intent intent = new Intent(this, HandActivity.class);
-		this.startActivity(intent);
-		this.finish();
-	}
+	private void help(){
+		new AlertDialog.Builder(MouseActivity.this).setTitle("使用帮助")
+		.setMessage("本页面可进行信息的发送 其中DOS发送是在DOS窗口下 信息的发送   \n使用设置 可设置音量键的操作 以方便你的使用和操作").setIcon(R.drawable.icon)
+		.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+			public void onClick(DialogInterface dialog, int whichButton) {
+				// finish();
+			}
+		}).setNegativeButton("返回",
+				new DialogInterface.OnClickListener() {
 
-	@Override
-	public boolean onKeyDown(int keyCode, KeyEvent event) {
+					@Override
+					public void onClick(DialogInterface dialog,
+							int which) {
+						// TODO Auto-generated method stub
 
-		if (keyCode == KeyEvent.KEYCODE_VOLUME_DOWN) {
-			if(volumedownkey.equals("leftButton")){
-				sendMessage("leftButton:click");
-				
-			} else if(volumedownkey.equals("rightButton"))
-				sendMessage("rightButton:click");
-			else
-				sendMessage("keyboard:key,"+volumedownkey+",click");
-			return true;
+					}
 
-		} else if (keyCode == KeyEvent.KEYCODE_VOLUME_UP) {
-
-			if(volumeupkey.equals("leftButton"))
-				sendMessage("leftButton:click");
-			else if(volumeupkey.equals("rightButton"))
-				sendMessage("rightButton:click");
-			else
-				sendMessage("keyboard:key,"+volumeupkey+",click");
-			return true;
-
-		}else if( keyCode== KeyEvent.KEYCODE_HOME){
-			return true;
-		} else if( keyCode== KeyEvent.KEYCODE_BACK){
-			return true;
-		} 
-		
-		else {
-
-			return super.onKeyDown(keyCode, event);
-
-		}
-
+				}).show();
 	}
 	
 	private void doBack(){

@@ -3,8 +3,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical"
-    android:background="@drawable/logo"
-     >
+    android:background="@drawable/windows">
 
     <EditText
         android:id="@+id/IpEditText"
@@ -39,12 +38,13 @@
 
     <Button
         android:id="@+id/ConnectButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:layout_below="@+id/SocketEditText"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="27dp"
-        android:text="@string/connectButton" />
+        android:text="@string/connectButton" 
+        android:background="@drawable/connectbutton"/>
 
     <TextView
         android:id="@+id/textView2"

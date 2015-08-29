@@ -74,7 +74,7 @@ public class ScreenActivity extends Activity{
 			InetAddress serverAddress = InetAddress.getByName(Settings.ipnum);
 			byte data[] = str.getBytes();
 			outPacket = new DatagramPacket(data, data.length,
-					serverAddress, Settings.scoketnum);
+					serverAddress, Settings.socketnum);
 			socket.send(outPacket);
 			receivePic();
 		} catch (Exception e) {
@@ -88,7 +88,7 @@ public class ScreenActivity extends Activity{
 		int getLength = 8192;
 		byte data[] = "ACK".getBytes();
 		DatagramPacket ackPacket = new DatagramPacket(data, data.length,
-				serverAddress, Settings.scoketnum - 1);
+				serverAddress, Settings.socketnum - 1);
 		
 		//添加判断逻辑
                 deleteFile("screen.png"); 
@@ -163,15 +163,15 @@ public class ScreenActivity extends Activity{
 			return true;
 						
 		
-		case R.id.doshelp:
+		case R.id.help:
 			help();
 			return true;
 		
 		case R.id.reback:
 			doBack();
 			return true;
-		case R.id.exit:
-			doExit();
+		case R.id.about:
+			about();
 			return true;
 		}
 		return false;
@@ -223,27 +223,49 @@ public class ScreenActivity extends Activity{
 			
 	
 	private void doBack(){
-		 Intent intent = new Intent(ScreenActivity.this,RemoteControlActivity.class);
+		 Intent intent = new Intent(ScreenActivity.this,ConnectActivity.class);
 		 ScreenActivity.this.startActivity(intent);
 		 this.finish();
 	}
 	
-	protected void doExit() {
-		new AlertDialog.Builder(this)
-				.setMessage(getString(R.string.exit_message))
-				.setPositiveButton(getString(R.string.confirm),
-						new DialogInterface.OnClickListener() {
-							public void onClick(
-								DialogInterface dialoginterface, int i) {
-								finish();
-							}
-						})
-				.setNeutralButton(getString(R.string.cancel),
-						new DialogInterface.OnClickListener() {
-							public void onClick(DialogInterface arg0, int arg1) {
-							}
+//	protected void doExit() {
+//		new AlertDialog.Builder(this)
+//				.setMessage(getString(R.string.exit_message))
+//				.setPositiveButton(getString(R.string.confirm),
+//						new DialogInterface.OnClickListener() {
+//							public void onClick(
+//								DialogInterface dialoginterface, int i) {
+//								finish();
+//							}
+//						})
+//				.setNeutralButton(getString(R.string.cancel),
+//						new DialogInterface.OnClickListener() {
+//							public void onClick(DialogInterface arg0, int arg1) {
+//							}
+//
+//						}).show();
+//
+//	}
+	
+	public void about() {
+		new AlertDialog.Builder(ScreenActivity.this)
+				.setTitle("关于")
+				.setMessage("欢迎使用 遥控小精灵  \n作者：刘锐群")
+				.setIcon(R.drawable.icon)
+				.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+					@Override
+					public void onClick(DialogInterface dialog, int whichButton) {
+						// finish();
+					}
+				})
+				.setNegativeButton("返回", new DialogInterface.OnClickListener() {
 
-						}).show();
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+						// TODO Auto-generated method stub
 
+					}
+
+				}).show();
 	}
 }

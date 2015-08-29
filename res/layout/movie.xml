@@ -2,50 +2,52 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical" 
+    android:background="@drawable/windows"
+    >
     
-    <TextView
+    <Button
         android:id="@+id/startbutton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/start"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/startbutton"
         android:layout_centerInParent="true"
         />
     
-    <TextView
+    <Button
         android:id="@+id/backbutton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_above="@+id/volumedownbutton"
         android:layout_alignTop="@id/startbutton"
         android:layout_toLeftOf="@id/startbutton"
-        android:background="@drawable/back" />
+        android:background="@drawable/backbutton" />
     
-    <TextView
+    <Button
         android:id="@+id/forbutton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_alignBottom="@+id/startbutton"
         android:layout_alignTop="@id/startbutton"
         android:layout_toRightOf="@id/startbutton"
-        android:background="@drawable/forword" />
+        android:background="@drawable/forwardbutton" />
     
-    <TextView
+    <Button
         android:id="@+id/volumeupbutton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_above="@id/startbutton"
         android:layout_alignLeft="@id/startbutton"
         android:layout_alignRight="@+id/startbutton"
-        android:background="@drawable/up" />
+        android:background="@drawable/upbutton" />
     
-    <TextView
+    <Button
         android:id="@+id/volumedownbutton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_alignLeft="@id/startbutton"
         android:layout_below="@id/startbutton"
         android:layout_toLeftOf="@+id/forbutton"
-        android:background="@drawable/down" />
+        android:background="@drawable/downbutton" />
 
 </RelativeLayout>

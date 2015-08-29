@@ -186,7 +186,7 @@ public class DOSActivity extends Activity {
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
-		case R.id.doshelp:
+		case R.id.help:
 			help();
 			return true;
 		

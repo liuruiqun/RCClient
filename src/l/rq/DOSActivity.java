@@ -162,7 +162,7 @@ public class DOSActivity extends Activity {
 			byte data[] = str.getBytes();
 			// 创建一个DatagramPacket对象，并指定要讲这个数据包发送到网络当中的哪个地址，以及端口号
 			DatagramPacket packet = new DatagramPacket(data, data.length,
-					serverAddress, Settings.scoketnum);
+					serverAddress, Settings.socketnum);
 			// 调用socket对象的send方法，发送数据
 			socket.send(packet);
 						
@@ -186,10 +186,12 @@ public class DOSActivity extends Activity {
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
-		case R.id.doshelp:
+		case R.id.about:
+			about();
+			return true;		
+		case R.id.help:
 			help();
-			return true;
-		
+			return true;		
 		case R.id.reback:
 			doBack();
 			return true;
@@ -210,6 +212,28 @@ public class DOSActivity extends Activity {
 					@Override
 					public void onClick(DialogInterface dialog,
 							int which) {
+						// TODO Auto-generated method stub
+
+					}
+
+				}).show();
+	}
+	
+	public void about() {
+		new AlertDialog.Builder(DOSActivity.this)
+				.setTitle("关于")
+				.setMessage("欢迎使用 遥控小精灵  \n作者：刘锐群")
+				.setIcon(R.drawable.icon)
+				.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+					@Override
+					public void onClick(DialogInterface dialog, int whichButton) {
+						// finish();
+					}
+				})
+				.setNegativeButton("返回", new DialogInterface.OnClickListener() {
+
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
 						// TODO Auto-generated method stub
 
 					}

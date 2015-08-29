@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu
   xmlns:android="http://schemas.android.com/apk/res/android">
-
- <item android:id="@+id/doshelp"
+<item android:id="@+id/about"
+android:title="@string/about"
+/> 
+<item android:id="@+id/help"
 android:title="@string/helpin"
- />
-  <item android:id="@+id/reback"
+/>
+<item android:id="@+id/reback"
 android:title="@string/reback"
- />
-  <item android:id="@+id/exit"
-android:title="@string/exit"
- /> 
+/>
  
-
 </menu>

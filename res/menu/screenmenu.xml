@@ -16,7 +16,7 @@
 	android:title="@string/keyboard"
 />
 
-<item android:id="@+id/screenhelp"
+<item android:id="@+id/help"
 	android:title="@string/helpin"
 />
 

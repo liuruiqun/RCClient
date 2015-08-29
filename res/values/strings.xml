@@ -2,7 +2,7 @@
 <resources>
 
     <string name="hello">欢迎使用!</string>
-    <string name="default_ip">192.168.0.77</string>
+    <string name="default_ip">192.168.0.78</string>
 	<string name="default_socket">8888</string>
 	<string name="declare">在此声明!</string>	
 	<string name="startButton">截屏</string>

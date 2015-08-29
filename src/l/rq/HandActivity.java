@@ -410,7 +410,7 @@ public class HandActivity extends Activity {
 			byte data[] = str.getBytes();
 			// 创建一个DatagramPacket对象，并指定要讲这个数据包发送到网络当中的哪个地址，以及端口号
 			DatagramPacket packet = new DatagramPacket(data, data.length,
-					serverAddress, Settings.scoketnum);
+					serverAddress, Settings.socketnum);
 			// 调用socket对象的send方法，发送数据
 			socket.send(packet);
 		} catch (Exception e) {
