@@ -4,10 +4,8 @@ package l.rq;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
-import java.net.UnknownHostException;
 
-import qianyan.rc.R;
-
+import l.rq.R;
 
 
 import android.app.Activity;
@@ -66,7 +64,7 @@ public class ConnectActivity extends Activity {
         		        //设置超时时间,3秒  
         		    	socket.setSoTimeout(3000);  
         		    	socket.receive(inPacket);
-        		    	System.out.println(new String (inPacket.getData()));
+        		    	//System.out.println(new String (inPacket.getData()));
         		    } catch (Exception e) {  
         		    	Toast.makeText(ConnectActivity.this, "连接失败", Toast.LENGTH_SHORT).show();
         		    	throw e;  

@@ -5,7 +5,10 @@ import java.net.DatagramSocket;
 import java.net.InetAddress;
 import java.net.SocketException;
 
-import qianyan.rc.R;
+import l.rq.R;
+
+
+
 
 import android.app.Activity;
 import android.app.AlertDialog;

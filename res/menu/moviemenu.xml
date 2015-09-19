@@ -10,6 +10,7 @@
 
  <item android:id="@+id/reback"
 	android:title="@string/reback"
+	android:showAsAction="always|withText"
 />
 
 </menu>

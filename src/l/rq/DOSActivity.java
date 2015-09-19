@@ -5,7 +5,7 @@ import java.net.DatagramSocket;
 import java.net.InetAddress;
 import java.net.SocketException;
 
-import qianyan.rc.R;
+import l.rq.R;
 
 
 
